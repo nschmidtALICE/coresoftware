@@ -62,7 +62,13 @@ class RawTowerBuilderByHitIndex : public SubsysReco
   {
     m_SimTowerNodePrefix = simTowerNodePrefix;
   }
-
+  /** Set time window allowed for tower aggregation.
+   */
+  void
+  set_hit_time_window(const double tmax)
+  {
+    m_Tmax = tmax;
+  }
  private:
   /** Create nodes for output.
    *
@@ -93,6 +99,7 @@ class RawTowerBuilderByHitIndex : public SubsysReco
   double m_RotInZ;
 
   double m_Emin;
+  double m_Tmax;
 
   std::map<std::string, double> m_GlobalParameterMap;
 };

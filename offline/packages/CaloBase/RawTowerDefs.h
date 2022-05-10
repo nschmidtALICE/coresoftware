@@ -46,7 +46,8 @@ namespace RawTowerDefs
     BWD_1 = 16,
     BWD_2 = 17,
     BWD_3 = 18,
-    BWD_4 = 19
+    BWD_4 = 19,
+    FOCAL = 20
   };
 
   /*! Returns CaloTowerID for given calorimeter ID, tower index 1, and tower index 2
@@ -278,6 +279,10 @@ namespace RawTowerDefs
     case BWD_4:
       return "BWD_4";
       break;
+
+    case FOCAL:
+      return "FOCAL";
+      break;
   
     default:
       std::cout
@@ -351,6 +356,9 @@ namespace RawTowerDefs
 
     else if (caloname == "BWD_4")
       return BWD_4;
+
+    else if (caloname == "FOCAL")
+      return FOCAL;
 
     else
     {
